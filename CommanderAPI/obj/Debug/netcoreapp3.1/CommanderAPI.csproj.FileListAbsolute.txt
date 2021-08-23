@@ -6,7 +6,6 @@ E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\CommanderAPI.
 E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\CommanderAPI.runtimeconfig.dev.json
 E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\CommanderAPI.dll
 E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\CommanderAPI.pdb
-E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.csprojAssemblyReference.cache
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.AssemblyInfoInputs.cache
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.AssemblyInfo.cs
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.csproj.CoreCompileInputs.cache
@@ -18,3 +17,4 @@ E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.dll
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.pdb
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.genruntimeconfig.cache
+E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.csprojAssemblyReference.cache
