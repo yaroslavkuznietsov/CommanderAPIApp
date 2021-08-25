@@ -31,6 +31,8 @@ namespace CommanderAPI
 
             services.AddControllers();
 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddScoped<ICommanderRepo, SqlCommanderRepo>();    // MockCommanderRepo <-> SqlCommanderRepo
         }
 

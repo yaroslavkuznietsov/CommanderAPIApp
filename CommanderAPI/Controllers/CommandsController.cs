@@ -1,4 +1,6 @@
-﻿using CommanderAPI.Data;
+﻿using AutoMapper;
+using CommanderAPI.Data;
+using CommanderAPI.Dtos;
 using CommanderAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -15,30 +17,39 @@ namespace CommanderAPI.Controllers
     public class CommandsController : ControllerBase
     {
         private readonly ICommanderRepo _repo;
+        private readonly IMapper _mapper;
 
-        public CommandsController(ICommanderRepo repo)
+        public CommandsController(ICommanderRepo repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
         //private readonly MockCommanderRepo _repo = new MockCommanderRepo();
 
         // GET api/commands
         [HttpGet]
-        public ActionResult<IEnumerable<Command>> GetAllCommands()
+        public ActionResult<IEnumerable<CommandReadDto>> GetAllCommands()
         {
             var commandItems = _repo.GetAppCommands();
 
-            return Ok(commandItems);
+            IEnumerable<CommandReadDto> commandReadDtos = _mapper.Map<List<CommandReadDto>>(commandItems);
+
+            return Ok(_mapper.Map<IEnumerable<CommandReadDto>>(commandItems));
         }
 
         // GET api/commands/{id}
         [HttpGet("{id}")]
-        public ActionResult<Command> GetCommandById(int id)
+        public ActionResult<CommandReadDto> GetCommandById(int id)
         {
             var commandItem = _repo.GetCommandById(id);
 
-            return Ok(commandItem);
+            if (commandItem != null)
+            {
+                CommandReadDto commandReadDto = _mapper.Map<CommandReadDto>(commandItem);
+                return Ok(_mapper.Map<CommandReadDto>(commandItem));
+            }
+            return NotFound();
         }
     }
 }

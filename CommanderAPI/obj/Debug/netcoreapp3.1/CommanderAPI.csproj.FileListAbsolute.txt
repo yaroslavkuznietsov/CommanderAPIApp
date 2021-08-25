@@ -61,3 +61,5 @@ E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.dll
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.pdb
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.genruntimeconfig.cache
+E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
