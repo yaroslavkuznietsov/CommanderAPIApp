@@ -16,6 +16,8 @@ namespace CommanderAPI.Profiles
             CreateMap<Command, CommandReadDto>();
             // Target -> Source
             CreateMap<CommandCreateDto, Command>();
+            // Target -> Source
+            CreateMap<CommandUpdateDto, Command>();
         }
     }
 }

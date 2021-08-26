@@ -1,4 +1,3 @@
-E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.csprojAssemblyReference.cache
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.AssemblyInfoInputs.cache
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.AssemblyInfo.cs
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.csproj.CoreCompileInputs.cache
@@ -63,3 +62,4 @@ E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.
 E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.genruntimeconfig.cache
 E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
 E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll

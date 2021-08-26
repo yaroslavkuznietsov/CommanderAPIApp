@@ -58,7 +58,6 @@ namespace CommanderAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-
         public ActionResult<CommandReadDto> CreateCommand(CommandCreateDto commandCreateDto)
         {
             var commandModel = _mapper.Map<Command>(commandCreateDto);
@@ -68,6 +67,22 @@ namespace CommanderAPI.Controllers
 
             //return Ok(commandReadDto);
             return CreatedAtRoute(nameof(GetCommandById), new { Id = commandReadDto.Id }, commandReadDto);
+        }
+
+        // PUT api/commands/{id}
+        [HttpPut("{id}")]
+        public ActionResult<CommandUpdateDto> UpdateCommand(int id, CommandUpdateDto commandUpdateDto)
+        {
+            var commandModelFromRepo = _repo.GetCommandById(id);
+            if (commandModelFromRepo == null || commandModelFromRepo.Id == 0)
+            {
+                return NotFound();
+            }
+            //var commandModel = _mapper.Map<Command>(commandUpdateDto);
+            _mapper.Map(commandUpdateDto, commandModelFromRepo);
+            _repo.UpdateCommand(commandModelFromRepo);
+            _repo.SaveChanges();
+            return NoContent();
         }
     }
 }
