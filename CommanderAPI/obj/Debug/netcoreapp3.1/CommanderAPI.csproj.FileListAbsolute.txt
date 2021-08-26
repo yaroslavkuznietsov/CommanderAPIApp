@@ -63,3 +63,6 @@ E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.
 E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
 E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\dev\github\CommanderAPIApp\CommanderAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+E:\dev\github\CommanderAPIApp\CommanderAPI\obj\Debug\netcoreapp3.1\CommanderAPI.csprojAssemblyReference.cache

@@ -3,6 +3,7 @@ using CommanderAPI.Data;
 using CommanderAPI.Dtos;
 using CommanderAPI.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -71,7 +72,7 @@ namespace CommanderAPI.Controllers
 
         // PUT api/commands/{id}
         [HttpPut("{id}")]
-        public ActionResult<CommandUpdateDto> UpdateCommand(int id, CommandUpdateDto commandUpdateDto)
+        public ActionResult UpdateCommand(int id, CommandUpdateDto commandUpdateDto)
         {
             var commandModelFromRepo = _repo.GetCommandById(id);
             if (commandModelFromRepo == null || commandModelFromRepo.Id == 0)
@@ -82,6 +83,29 @@ namespace CommanderAPI.Controllers
             _mapper.Map(commandUpdateDto, commandModelFromRepo);
             _repo.UpdateCommand(commandModelFromRepo);
             _repo.SaveChanges();
+            return NoContent();
+        }
+
+        // PATCH api/commands/{id}
+        [HttpPatch("{id}")]
+        public ActionResult PartialCommandUpdate(int id, JsonPatchDocument<CommandUpdateDto> patchDoc)
+        {
+            var commandModelFromRepo = _repo.GetCommandById(id);
+            if (commandModelFromRepo == null || commandModelFromRepo.Id == 0)
+            {
+                return NotFound();
+            }
+
+            var commandToPatch = _mapper.Map<CommandUpdateDto>(commandModelFromRepo);
+            patchDoc.ApplyTo(commandToPatch, ModelState);
+
+            if (!TryValidateModel(commandToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+            _mapper.Map(commandToPatch, commandModelFromRepo);
+            _repo.SaveChanges();
+
             return NoContent();
         }
     }
