@@ -2,6 +2,7 @@
 using CommanderAPI.Data;
 using CommanderAPI.Dtos;
 using CommanderAPI.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,7 @@ namespace CommanderAPI.Controllers
         }
 
         // GET api/commands/{id}
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetCommandById")]
         public ActionResult<CommandReadDto> GetCommandById(int id)
         {
             var commandItem = _repo.GetCommandById(id);
@@ -47,20 +48,26 @@ namespace CommanderAPI.Controllers
             if (commandItem != null)
             {
                 CommandReadDto commandReadDto = _mapper.Map<CommandReadDto>(commandItem);
-                return Ok(_mapper.Map<CommandReadDto>(commandItem));
+                return Ok(commandReadDto);
             }
             return NotFound();
         }
 
-       // POST api/commands
-       [HttpPost]
-       public ActionResult<CommandReadDto> CreateCommand(CommandCreateDto commandCreateDto)
+        // POST api/commands
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+
+        public ActionResult<CommandReadDto> CreateCommand(CommandCreateDto commandCreateDto)
         {
             var commandModel = _mapper.Map<Command>(commandCreateDto);
             _repo.CreateCommand(commandModel);
             _repo.SaveChanges();
+            var commandReadDto = _mapper.Map<CommandReadDto>(commandModel);
 
-            return Ok(_mapper.Map<CommandReadDto>(commandModel));
+            //return Ok(commandReadDto);
+            return CreatedAtRoute(nameof(GetCommandById), new { Id = commandReadDto.Id }, commandReadDto);
         }
     }
 }
