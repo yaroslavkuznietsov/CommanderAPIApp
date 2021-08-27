@@ -13,6 +13,11 @@ namespace CommanderAPI.Data
             throw new NotImplementedException();
         }
 
+        public void DeleteCommand(Command cmd)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Command> GetAppCommands()
         {
             var commands = new List<Command>
